@@ -1,7 +1,7 @@
 # Painel Gerenciador de Projetos
-
+# Um breve resumo sobre a ferramenta
 O projeto painelProjetos é um ecossistema de dados desenvolvido em colaboração com um amigo. Utilizamos o PostgreSQL e o MongoDB como bancos de dados e o framework Laravel para a aplicação, fornecendo uma interface detalhada. Além disso, criamos um painel de controle dinâmico e visualmente atraente no Power BI.
-
+# Objetivo
 O objetivo deste projeto é demonstrar nossas habilidades como programadores e mostrar a capacidade de trabalhar em equipe. Ele representa um destaque em nosso portfólio, onde aplicamos conhecimentos adquiridos e exploramos novas tecnologias.
 
 ## Recursos
