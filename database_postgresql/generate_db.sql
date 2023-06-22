@@ -184,6 +184,13 @@ CREATE TABLE "tipo_areas" (
   "created_at" timestamp DEFAULT CURRENT_TIMESTAMP,
   "updated_at" timestamp DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE "tipo_vendas" (
+  "id" serial PRIMARY KEY,
+  "nome" varchar(70) NOT NULL,
+  "descricao" varchar(200) DEFAULT NULL,
+  "created_at" timestamp DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" timestamp DEFAULT CURRENT_TIMESTAMP
+);
 
 -- Relações entre Tabelas
 
@@ -210,7 +217,6 @@ ALTER TABLE "empreendimentos" ADD FOREIGN KEY ("empresa_id") REFERENCES "empresa
 --
 ALTER TABLE "prorrogados" ADD FOREIGN KEY ("prazo_id") REFERENCES "prazos" ("id");
 
-
 -- Relações de Tipologia
 
 ALTER TABLE "projetos" ADD FOREIGN KEY ("tipo_entrega_id") REFERENCES "tipo_entregas" ("id");
@@ -222,6 +228,8 @@ ALTER TABLE "empreendimentos" ADD FOREIGN KEY ("tipo_empreendimento_id") REFEREN
 --
 ALTER TABLE "etapas" ADD FOREIGN KEY ("tipo_recorrencia_id") REFERENCES "tipo_recorrencias" ("id");
 ALTER TABLE "etapas" ADD FOREIGN KEY ("tipo_entrega_id") REFERENCES "tipo_entregas" ("id");
+--
+ALTER TABLE "ativos" ADD FOREIGN KEY ("tipo_venda_id") REFERENCES "tipo_vendas" ("id");
 --
 ALTER TABLE "prazos" ADD FOREIGN KEY ("tipo_status_id") REFERENCES "tipo_status" ("id");
 --
