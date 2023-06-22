@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProrrogadosTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateProrrogadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('prorrogados', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('id_objeto');
-            $table->uuid('prazo_id');
-            $table->text('descricao');
+        Schema::create('tipo_status', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nome', 70);
+            $table->string('descricao', 200)->nullable();
             $table->timestamp('created_at')->default(now());
             $table->timestamp('updated_at')->default(now());
-
-            $table->foreign('id_objeto')->references('id')->on('objetos');
-            $table->foreign('prazo_id')->references('id')->on('prazos');
         });
     }
 
@@ -33,6 +29,6 @@ class CreateProrrogadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prorrogados');
+        Schema::dropIfExists('tipo_status');
     }
-}
+};

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoRecorrenciasTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTipoRecorrenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_recorrencias', function (Blueprint $table) {
+        Schema::create('tipo_empreendimentos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 70);
             $table->string('descricao', 200)->nullable();
@@ -29,6 +29,6 @@ class CreateTipoRecorrenciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_recorrencias');
+        Schema::dropIfExists('tipo_empreendimentos');
     }
-}
+};

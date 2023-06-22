@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoAreasTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTipoAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_areas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nome', 70);
-            $table->string('descricao', 200)->nullable();
+        Schema::create('emails', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->uuid('id_objeto');
+            $table->string('email', 50);
+            $table->string('descricao', 70);
             $table->timestamp('created_at')->default(now());
             $table->timestamp('updated_at')->default(now());
         });
@@ -29,6 +30,6 @@ class CreateTipoAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_areas');
+        Schema::dropIfExists('emails');
     }
-}
+};

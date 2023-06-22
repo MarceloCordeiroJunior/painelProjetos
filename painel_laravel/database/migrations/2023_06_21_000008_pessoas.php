@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFuncionariosTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateFuncionariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('funcionarios', function (Blueprint $table) {
+        Schema::create('pessoas', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('pessoa_id');
-            $table->unsignedInteger('tipo_cargo_id');
+            $table->string('nome', 70)->nullable(false);
+            $table->char('cpf', 11)->nullable()->default(null);
+            $table->string('url_linkedin', 255)->nullable()->default(null);
             $table->timestamp('created_at')->default(now());
             $table->timestamp('updated_at')->default(now());
-
-            $table->foreign('pessoa_id')->references('id')->on('pessoas');
-            $table->foreign('tipo_cargo_id')->references('id')->on('tipo_cargos');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateFuncionariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('funcionarios');
+        Schema::dropIfExists('pessoas');
     }
-}
+};

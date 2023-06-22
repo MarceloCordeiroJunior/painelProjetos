@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmpresasTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateEmpresasTable extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('geolocs', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('nome', 70)->nullable(false);
-            $table->char('cnpj', 18)->nullable();
-            $table->unsignedInteger('tipo_area_id');
+            $table->uuid('id_objeto');
+            $table->char('cep', 8)->nullable();
+            $table->string('endereco', 70)->nullable();
             $table->timestamp('created_at')->default(now());
             $table->timestamp('updated_at')->default(now());
-
-            $table->foreign('tipo_area_id')->references('id')->on('tipo_areas');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateEmpresasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('geolocs');
     }
-}
+};

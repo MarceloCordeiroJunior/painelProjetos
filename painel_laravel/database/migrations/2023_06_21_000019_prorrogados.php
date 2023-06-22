@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmpreendimentosTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateEmpreendimentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('empreendimentos', function (Blueprint $table) {
+        Schema::create('prorrogados', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('nome', 100)->nullable(false);
-            $table->uuid('empresa_id');
-            $table->unsignedInteger('tipo_empreendimento_id');
+            $table->uuid('id_objeto');
+            $table->uuid('prazo_id');
+            $table->text('descricao');
             $table->timestamp('created_at')->default(now());
             $table->timestamp('updated_at')->default(now());
 
-            $table->foreign('empresa_id')->references('id')->on('empresas');
-            $table->foreign('tipo_empreendimento_id')->references('id')->on('tipo_empreendimentos');
+            $table->foreign('prazo_id')->references('id')->on('prazos');
         });
     }
 
@@ -33,6 +32,6 @@ class CreateEmpreendimentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empreendimentos');
+        Schema::dropIfExists('prorrogados');
     }
-}
+};

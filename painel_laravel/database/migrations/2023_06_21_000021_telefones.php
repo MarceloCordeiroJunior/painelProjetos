@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoEntregasTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTipoEntregasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_entregas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nome', 70);
-            $table->string('descricao', 200)->nullable();
+        Schema::create('telefones', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->uuid('id_objeto');
+            $table->char('telefone', 11);
+            $table->string('descricao', 70);
             $table->timestamp('created_at')->default(now());
             $table->timestamp('updated_at')->default(now());
         });
@@ -29,6 +30,6 @@ class CreateTipoEntregasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_entregas');
+        Schema::dropIfExists('telefones');
     }
-}
+};

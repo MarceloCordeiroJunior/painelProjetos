@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoStatusTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTipoStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_status', function (Blueprint $table) {
+        Schema::create('tipo_entregas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 70);
             $table->string('descricao', 200)->nullable();
@@ -29,6 +29,6 @@ class CreateTipoStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_status');
+        Schema::dropIfExists('tipo_entregas');
     }
-}
+};
