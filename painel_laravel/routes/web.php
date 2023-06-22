@@ -33,8 +33,8 @@ Route::post('/GerenciadorPRJ/Interno/Liberar/','App\Http\Controllers\Redirects@u
 
 ###projeto
 
-Route::get('/GerenciadorPRJ/Pesquisar/Projeto','App\Http\Controllers\Redirects@index_projeto')
-->name('projeto_index'); //pagina para busca do projeto - index
+Route::get('/GerenciadorPRJ/Pesquisar/Projeto','App\Http\Controllers\ProjetoController@index')
+->name('projeto_index');
 
 Route::get('/GerenciadorPRJ/Adicionar/Projeto','App\Http\Controllers\ProjetoController@create')
 ->name('projeto_create'); //view create projeto - create

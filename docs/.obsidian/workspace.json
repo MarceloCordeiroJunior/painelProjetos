@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c4a2376ae52437cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Painel-Laravel/Explicações Iniciais.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "convertional_commit.md",
+                "file": "Painel-Laravel/Explicações Iniciais.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "convertional_commit.md",
+                "file": "Painel-Laravel/Explicações Iniciais.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "convertional_commit.md"
+                "file": "Painel-Laravel/Explicações Iniciais.md"
               }
             }
           }
@@ -146,10 +159,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6504b0b6577090ab",
+  "active": "c4a2376ae52437cf",
   "lastOpenFiles": [
-    "Untitled.md",
     "convertional_commit.md",
+    "Painel-Laravel/Explicações Iniciais.md",
+    "Painel-Laravel",
     "example.md"
   ]
 }
