@@ -15,7 +15,7 @@ O objetivo deste projeto é demonstrar nossas habilidades como programadores e m
 
 Se você tiver interesse em obter mais informações sobre o projeto ou estiver interessado em colaborar, fique à vontade para entrar em contato conosco, nossas informações de contato estão em nossos respectivos perfis.
 
-https://github.com/MarceloCordeiroJunior
+https://github.com/dvrtenmind
 
 https://github.com/MatheusOlivr
 
