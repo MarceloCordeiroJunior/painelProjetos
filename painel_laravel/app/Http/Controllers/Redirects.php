@@ -17,7 +17,7 @@ class Redirects extends Controller
 {
     public function index_projeto(){
 
-        $bruto_projetos = Projeto::select('nome','numero_projeto')->get();
+        $bruto_projetos = Projeto::select('nome','numero')->get();
         $arrayp = [];$n=0;
         foreach($bruto_projetos as $projetos){
             $arrayp[$n]['info']=$projetos->numero . " - " . $projetos->nome;

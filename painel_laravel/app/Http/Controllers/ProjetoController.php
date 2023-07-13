@@ -12,21 +12,6 @@ use Illuminate\Validation\Rule;
 class ProjetoController extends Controller
 {
 
-    public function index(){
-        // Retrieving database data
-        $projetos = Projeto::select('nome','numero_projeto')->get();
-
-        // Sorting data in array
-        $data = array();$count=0;
-        foreach($projetos as $projeto){
-            $data[$count]['data'] = $projeto->numero_projeto . " - " . $projeto->nome;
-            dd($projeto);
-            $data[$count]['value'] = $projeto->id;$count++;
-        }
-        // calling view
-        return view('v2.projetos.index',['data'=>$data]);
-    }
-
     public function create(){
         $empresa = empresa::get('nome');
         if(isset($empresa[0])){
